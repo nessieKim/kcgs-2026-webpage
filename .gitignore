@@ -2,6 +2,9 @@
 /_*.png
 /_*.html
 
+# raw key-visual source renders (47MB); web-optimized copies live in assets/
+/key_visuals/
+
 # OS
 Thumbs.db
 .DS_Store
