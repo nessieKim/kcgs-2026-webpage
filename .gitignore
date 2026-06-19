@@ -1,0 +1,7 @@
+# temporary render/screenshot/DOM-dump artifacts
+/_*.png
+/_*.html
+
+# OS
+Thumbs.db
+.DS_Store
