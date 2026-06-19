@@ -24,7 +24,7 @@
   --stitch-v:repeating-linear-gradient(180deg, rgba(120,170,230,.42) 0 7px, transparent 7px 14px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:clip}
+html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{font-family:var(--ff-body);background:var(--void);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
@@ -60,18 +60,10 @@ header.scrolled{background:rgba(10,13,20,.88);border-bottom-color:var(--line)}
 @media(max-width:700px){.brand .tag{display:none}.header-cta span{display:none}.header-cta{padding:9px 11px}}
 
 /* HERO */
-.hero{position:relative;min-height:min(94vh,880px);display:flex;align-items:center;overflow:hidden}
-.hero-visual{position:absolute;top:0;right:0;bottom:0;width:62%;z-index:1;pointer-events:none}
-.hero-visual .glow{position:absolute;top:48%;right:13%;width:44vw;max-width:640px;height:44vw;max-height:640px;transform:translateY(-50%);background:radial-gradient(circle, rgba(66,205,221,.34), rgba(64,169,255,.13) 46%, transparent 70%)}
-.hero-visual img{position:absolute;right:1%;top:50%;transform:translateY(-50%);height:90%;width:auto;max-width:none;object-fit:contain;filter:drop-shadow(0 36px 70px rgba(0,0,0,.55))}
-.hero::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(100deg, rgba(10,13,20,.97) 0%, rgba(10,13,20,.88) 33%, rgba(10,13,20,.34) 57%, rgba(10,13,20,0) 78%),linear-gradient(0deg, rgba(10,13,20,.55), transparent 28%)}
-.hero-inner{position:relative;z-index:3;width:100%;padding-block:clamp(64px,12vh,140px)}
-@media(max-width:820px){
-  .hero-visual{width:100%;opacity:.3}
-  .hero-visual img{right:auto;left:50%;top:48%;transform:translate(-50%,-50%);width:100%;max-width:100%;height:auto}
-  .hero-visual .glow{right:0;left:0;margin-inline:auto;width:88vw;height:88vw}
-  .hero::after{background:linear-gradient(180deg, rgba(10,13,20,.55) 0%, rgba(10,13,20,.8) 58%, rgba(10,13,20,.96) 100%),linear-gradient(100deg, rgba(10,13,20,.78), rgba(10,13,20,.28) 70%)}
-}
+.hero{position:relative;min-height:min(90vh,820px);display:flex;align-items:center;overflow:hidden}
+#cloth{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.24}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(125% 95% at 80% 45%, transparent 40%, rgba(10,13,20,.6) 100%),linear-gradient(100deg, rgba(10,13,20,.94) 0%, rgba(10,13,20,.8) 38%, rgba(10,13,20,.25) 66%, transparent 82%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding-block:clamp(64px,12vh,140px)}
 .hero-grid{display:flex;flex-direction:column;gap:26px;max-width:720px}
 .hero-eyebrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .hero h1{font-family:var(--ff-disp);font-weight:700;font-size:clamp(2.7rem,8vw,5.8rem);line-height:1;letter-spacing:-.03em}
@@ -82,7 +74,7 @@ header.scrolled{background:rgba(10,13,20,.88);border-bottom-color:var(--line)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:6px}
 .spectrum{display:flex;height:4px;max-width:720px;margin-top:14px;border-radius:2px;overflow:hidden}
 .spectrum i{flex:1}
-@media(max-width:700px){.hero-actions{flex-direction:column;align-items:stretch}.hero-actions .cta{justify-content:center}}
+@media(max-width:700px){.hero-actions .cta{flex:1 1 auto;justify-content:center}}
 
 /* generic section */
 .section{padding-block:clamp(72px,10vw,132px)}
@@ -99,21 +91,22 @@ header.scrolled{background:rgba(10,13,20,.88);border-bottom-color:var(--line)}
 .stat .num{font-family:var(--ff-disp);font-weight:700;font-size:clamp(1.8rem,3vw,2.3rem);color:var(--clo);line-height:1;letter-spacing:-.02em}
 .stat .lab{font-size:.84rem;color:var(--mut);margin-top:9px}
 
-/* credential band (zipper key visual) */
-#cred{position:relative;overflow:hidden;background:var(--void-2);min-height:clamp(580px,78vh,800px);display:flex;align-items:center;padding-block:clamp(60px,8vw,110px)}
-.cred-bg{position:absolute;inset:0;z-index:0;background:url("assets/kv-zipper.jpg") center right/cover no-repeat}
-.cred-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(96deg, var(--void-2) 2%, rgba(12,17,27,.93) 36%, rgba(12,17,27,.55) 58%, rgba(12,17,27,.08) 82%),linear-gradient(0deg, var(--void-2), transparent 20%),linear-gradient(180deg, var(--void-2), transparent 16%)}
-.cred-inner{position:relative;z-index:1;max-width:600px}
-.award-badge{font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--clo);display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-strong);border-radius:999px;padding:6px 14px;background:rgba(10,13,20,.4)}
+/* credential strip */
+#cred{background:linear-gradient(180deg,var(--void),var(--void-2))}
+.cred-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,64px);align-items:center}
+@media(max-width:880px){.cred-grid{grid-template-columns:1fr}}
+.award-badge{font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--clo);display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-strong);border-radius:999px;padding:6px 14px}
 .cred h2{font-family:var(--ff-disp);font-weight:600;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.08;letter-spacing:-.02em;margin:18px 0}
 :lang(ko) .cred h2{line-height:1.25}
 .cred p{color:var(--mut);max-width:52ch}
 .cred .quote{border-left:2px solid var(--clo);padding-left:16px;margin-top:20px;color:var(--ink);font-size:.98rem}
-.film-cap{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut-dim);margin-top:30px;margin-bottom:12px}
-.film-row{display:flex;flex-wrap:wrap;gap:8px}
-.film-chip{font-family:var(--ff-mono);font-size:11px;letter-spacing:.02em;color:var(--mut);border:1px solid var(--line-strong);border-radius:999px;padding:6px 12px;background:rgba(10,13,20,.5)}
-.film-chip b{color:var(--clo-light);font-weight:400;margin-left:7px}
-@media(max-width:820px){.cred-bg::after{background:linear-gradient(180deg, rgba(12,17,27,.72), rgba(12,17,27,.93))}.cred-inner{max-width:none}}
+.films{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--void)}
+.film{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:15px 20px;border-bottom:1px solid var(--line)}
+.film:last-child{border-bottom:0}
+.film .t{font-weight:500}
+.film .st{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.04em;color:var(--mut-dim);margin-left:8px}
+.film .y{font-family:var(--ff-mono);font-size:12px;color:var(--clo-light);flex-shrink:0}
+.films-cap{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut-dim);padding:13px 20px;background:var(--void-2);border-bottom:1px solid var(--line)}
 
 /* products taxonomy */
 .tax{margin-bottom:46px}
@@ -260,10 +253,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-visual" aria-hidden="true">
-      <div class="glow"></div>
-      <img src="assets/kv-jacket.png" alt="" fetchpriority="high" />
-    </div>
+    <canvas id="cloth" aria-hidden="true"></canvas>
     <div class="wrap hero-inner">
       <div class="hero-grid">
         <div class="hero-eyebrow">
@@ -308,25 +298,24 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
     </div>
   </section>
 
-  <!-- CREDENTIAL (zipper key visual) -->
-  <section id="cred">
-    <div class="cred-bg" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="cred cred-inner reveal">
+  <!-- CREDENTIAL -->
+  <section class="section" id="cred">
+    <div class="wrap cred-grid">
+      <div class="cred reveal">
         <span class="ey"><span class="n">02</span> <span data-ko="현장에서" data-en="In the field">현장에서</span></span>
         <div style="margin-top:16px"><span class="award-badge">★ Academy Sci-Tech Award · 2024</span></div>
         <h2 data-ko="2D 패턴을 재봉해 3D로. 그 기술이 오스카 과학기술상을 받았습니다." data-en="Sewing 2D patterns into 3D. That technology won a Sci-Tech Oscar.">2D 패턴을 재봉해 3D로. 그 기술이 오스카 과학기술상을 받았습니다.</h2>
-        <p data-ko-html="실제 옷을 만들듯 <b>2D 패턴을 재봉해 3D 의상으로 시뮬레이션</b>하는 클로버추얼패션의 기술. 원단의 결과 빗방울까지 실물 그대로입니다. 그 정점인 Marvelous Designer는 2024년 미국 영화예술과학아카데미(AMPAS) 과학기술상을 수상했습니다." data-en-html="CLO Virtual Fashion's technology <b>sews 2D patterns into 3D garments by simulation</b>, just like making real clothes, down to the fabric weave and the beading water. Marvelous Designer, built on it, received a 2024 Scientific and Technical Award from the Academy (AMPAS).">실제 옷을 만들듯 <b>2D 패턴을 재봉해 3D 의상으로 시뮬레이션</b>하는 클로버추얼패션의 기술. 원단의 결과 빗방울까지 실물 그대로입니다. 그 정점인 Marvelous Designer는 2024년 미국 영화예술과학아카데미(AMPAS) 과학기술상을 수상했습니다.</p>
+        <p data-ko-html="클로버추얼패션의 <b>Marvelous Designer</b>는 2024년 미국 영화예술과학아카데미(AMPAS) 과학기술상을 수상했습니다. 옷을 만드는 방식 그대로, 2D 패턴을 재봉해 3D로 시뮬레이션하는 기술이 영화·게임 제작 현장의 표준이 됐습니다." data-en-html="CLO Virtual Fashion's <b>Marvelous Designer</b> received a 2024 Scientific and Technical Award from the Academy (AMPAS). Its way of working, sewing 2D patterns into 3D the way real clothes are made, became a standard on film and game productions.">클로버추얼패션의 <b>Marvelous Designer</b>는 2024년 미국 영화예술과학아카데미(AMPAS) 과학기술상을 수상했습니다. 옷을 만드는 방식 그대로, 2D 패턴을 재봉해 3D로 시뮬레이션하는 기술이 영화·게임 제작 현장의 표준이 됐습니다.</p>
         <p class="quote" data-ko="“디지털 의상 제작을 위한 패턴 기반 접근으로 디자인과 시각화를 통합하고, 실제 재단에 대응하는 가상의 방식을 제시했다.” — 아카데미 수상 사유" data-en="“A pattern-based approach to digital costume construction, unifying design and visualization and providing a virtual analogy to physical tailoring.” — Academy citation">“디지털 의상 제작을 위한 패턴 기반 접근으로 디자인과 시각화를 통합하고, 실제 재단에 대응하는 가상의 방식을 제시했다.” — 아카데미 수상 사유</p>
-        <div class="film-cap" data-ko="Marvelous Designer가 쓰인 작품" data-en="Built with Marvelous Designer">Marvelous Designer가 쓰인 작품</div>
-        <div class="film-row">
-          <span class="film-chip">Assassin's Creed Shadows<b>’25</b></span>
-          <span class="film-chip">Civilization VII<b>’25</b></span>
-          <span class="film-chip">Path of Exile 2<b>’24</b></span>
-          <span class="film-chip">Diablo IV<b>’23</b></span>
-          <span class="film-chip">Avatar: The Way of Water<b>’22</b></span>
-          <span class="film-chip">Doctor Strange<b>’22</b></span>
-        </div>
+      </div>
+      <div class="films reveal">
+        <div class="films-cap" data-ko="Marvelous Designer가 쓰인 작품" data-en="Built with Marvelous Designer">Marvelous Designer가 쓰인 작품</div>
+        <div class="film"><span class="t">Assassin's Creed Shadows <span class="st">Ubisoft</span></span><span class="y">2025</span></div>
+        <div class="film"><span class="t">Civilization VII <span class="st">2K</span></span><span class="y">2025</span></div>
+        <div class="film"><span class="t">Path of Exile 2 <span class="st">Grinding Gear</span></span><span class="y">2024</span></div>
+        <div class="film"><span class="t">Diablo IV <span class="st">Blizzard</span></span><span class="y">2023</span></div>
+        <div class="film"><span class="t">Avatar: The Way of Water <span class="st">Wētā FX</span></span><span class="y">2022</span></div>
+        <div class="film"><span class="t">Doctor Strange in the Multiverse of Madness <span class="st">Marvel</span></span><span class="y">2022</span></div>
       </div>
     </div>
   </section>
@@ -722,6 +711,64 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
     const body=[L.name+': '+g('f-name').value,L.email+': '+g('f-email').value,L.lab+': '+g('f-lab').value,L.area+': '+sel('f-area'),L.day+': '+sel('f-day'),'',L.msg+':',g('f-msg').value].join('\n');
     window.location.href='mailto:career@clo3d.com?subject='+encodeURIComponent(L.sub)+'&body='+encodeURIComponent(body);
   });
+})();
+
+/* HERO: faint ambient cloth backdrop (demoted, no HUD) */
+(function(){
+  const cv=document.getElementById('cloth'); if(!cv) return;
+  const ctx=cv.getContext('2d');
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  let W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,2);
+  let COLS,ROWS,points,links,spacing,ox,oy,cx,cy;
+  const GRAV=0.12, DAMP=0.98, ITER=4, FOCAL=900;
+  let pointer={x:-9999,y:-9999,active:false}, t=0;
+  function build(){
+    const r=cv.getBoundingClientRect(); W=r.width; H=r.height;
+    cv.width=Math.max(1,Math.floor(W*dpr)); cv.height=Math.max(1,Math.floor(H*dpr)); ctx.setTransform(dpr,0,0,dpr,0,0);
+    const small=W<760; COLS=small?18:30; ROWS=small?13:19;
+    const clothW=W*(small?1.05:0.8); spacing=clothW/(COLS-1); ox=(W-clothW)/2; oy=H*0.06; cx=W/2; cy=H/2;
+    points=[]; links=[];
+    for(let j=0;j<ROWS;j++)for(let i=0;i<COLS;i++){const x=ox+i*spacing,y=oy+j*spacing;points.push({x,y,z:0,px:x,py:y,pz:0,pin:j===0});}
+    const idx=(i,j)=>j*COLS+i;
+    for(let j=0;j<ROWS;j++)for(let i=0;i<COLS;i++){
+      if(i<COLS-1)links.push([idx(i,j),idx(i+1,j),spacing]);
+      if(j<ROWS-1)links.push([idx(i,j),idx(i,j+1),spacing]);
+      if(i<COLS-1&&j<ROWS-1)links.push([idx(i,j),idx(i+1,j+1),spacing*1.414]);
+    }
+    if(reduce){settleStatic();draw();}
+  }
+  function settleStatic(){for(const p of points){if(p.pin)continue;const fx=(p.x-cx)/W,fy=(p.y-oy)/H;p.z=Math.sin(fx*5+fy*3)*24*fy;p.px=p.x;p.py=p.y;p.pz=p.z;}for(let k=0;k<60;k++)satisfy();}
+  function satisfy(){for(let s=0;s<links.length;s++){const a=points[links[s][0]],b=points[links[s][1]],rest=links[s][2];let dx=b.x-a.x,dy=b.y-a.y,dz=b.z-a.z;const d=Math.sqrt(dx*dx+dy*dy+dz*dz)||1e-4;const diff=(rest-d)/d*0.5,ax=dx*diff,ay=dy*diff,az=dz*diff;if(!a.pin){a.x-=ax;a.y-=ay;a.z-=az;}if(!b.pin){b.x+=ax;b.y+=ay;b.z+=az;}}}
+  function step(){
+    t+=1; const wz=Math.sin(t*0.008)*0.34+Math.sin(t*0.021)*0.18, wx=Math.cos(t*0.007)*0.08;
+    for(const p of points){if(p.pin)continue;const vx=(p.x-p.px)*DAMP,vy=(p.y-p.py)*DAMP,vz=(p.z-p.pz)*DAMP;p.px=p.x;p.py=p.y;p.pz=p.z;p.x+=vx+wx;p.y+=vy+GRAV;p.z+=vz+wz;
+      if(pointer.active){const dx=p.x-pointer.x,dy=p.y-pointer.y,d2=dx*dx+dy*dy;if(d2<12000){const ff=1-d2/12000;p.z-=ff*6;}}
+      p.z*=0.99;}
+    for(let k=0;k<ITER;k++)satisfy();
+  }
+  function proj(p){const s=FOCAL/(FOCAL-p.z);return[cx+(p.x-cx)*s,cy+(p.y-cy)*s];}
+  function draw(){
+    ctx.clearRect(0,0,W,H);const idx=(i,j)=>j*COLS+i;const light=[-0.45,-0.5,0.74];
+    for(let j=0;j<ROWS-1;j++)for(let i=0;i<COLS-1;i++){
+      const a=points[idx(i,j)],b=points[idx(i+1,j)],c=points[idx(i+1,j+1)],d=points[idx(i,j+1)];
+      const ux=b.x-a.x,uy=b.y-a.y,uz=b.z-a.z,vx=d.x-a.x,vy=d.y-a.y,vz=d.z-a.z;
+      let nx=uy*vz-uz*vy,ny=uz*vx-ux*vz,nz=ux*vy-uy*vx;const nl=Math.sqrt(nx*nx+ny*ny+nz*nz)||1;nx/=nl;ny/=nl;nz/=nl;
+      let sh=Math.max(0,Math.abs(nx*light[0]+ny*light[1]+nz*light[2]));
+      const lum=0.12+sh*0.9,rr=Math.round(8+lum*70),gg=Math.round(40+lum*150),bb=Math.round(80+lum*175);
+      const pa=proj(a),pb=proj(b),pc=proj(c),pd=proj(d);
+      ctx.beginPath();ctx.moveTo(pa[0],pa[1]);ctx.lineTo(pb[0],pb[1]);ctx.lineTo(pc[0],pc[1]);ctx.lineTo(pd[0],pd[1]);ctx.closePath();
+      ctx.fillStyle='rgba('+rr+','+gg+','+bb+','+(0.14+sh*0.4)+')';ctx.fill();
+    }
+    ctx.lineWidth=1;ctx.strokeStyle='rgba(120,195,255,0.16)';ctx.beginPath();
+    for(let j=0;j<ROWS;j++)for(let i=0;i<COLS;i++){const p=proj(points[idx(i,j)]);if(i<COLS-1){const q=proj(points[idx(i+1,j)]);ctx.moveTo(p[0],p[1]);ctx.lineTo(q[0],q[1]);}if(j<ROWS-1){const q=proj(points[idx(i,j+1)]);ctx.moveTo(p[0],p[1]);ctx.lineTo(q[0],q[1]);}}
+    ctx.stroke();
+  }
+  function loop(){step();draw();requestAnimationFrame(loop);}
+  const hero=cv.closest('.hero');
+  window.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;if(x>=0&&x<=r.width&&y>=0&&y<=r.height){pointer.x=x;pointer.y=y;pointer.active=true;}else pointer.active=false;},{passive:true});
+  window.addEventListener('pointerleave',()=>{pointer.active=false;});
+  let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(build,180);});
+  build(); if(!reduce) requestAnimationFrame(loop);
 })();
 </script>
 </body>
