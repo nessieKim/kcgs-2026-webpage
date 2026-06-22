@@ -198,6 +198,9 @@ header.scrolled{background:rgba(10,13,20,.88);border-bottom-color:var(--line)}
 .coffee-copy .direct{margin-top:24px;font-family:var(--ff-mono);font-size:13px;color:var(--mut);line-height:2}
 .coffee-copy .direct a{color:var(--clo);border-bottom:1px solid var(--line-strong)}
 .coffee-copy .direct a:hover{border-color:var(--clo)}
+.coffee-cta{max-width:680px}
+.cta-big{font-size:1.08rem;padding:17px 32px;margin-top:30px}
+.cta-big svg{width:18px;height:18px}
 form{display:grid;gap:16px}
 .field{display:flex;flex-direction:column;gap:7px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -522,60 +525,18 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
 
   <!-- COFFEE CHAT -->
   <section class="section" id="coffee">
-    <div class="wrap coffee-grid">
-      <div class="coffee-copy reveal">
+    <div class="wrap">
+      <div class="coffee-copy coffee-cta reveal">
         <span class="ey"><span class="n">08</span> <span data-ko="커피챗" data-en="Coffee chat">커피챗</span></span>
         <h2 data-ko="KCGS에서, 커피 한 잔." data-en="At KCGS, over coffee.">KCGS에서, 커피 한 잔.</h2>
         <p data-ko="2023년에 이어 2026년, 다시 KCGS로 갑니다. 여수 현장에서, 무엇을 연구하는지 들려주시면 그 분야를 직접 만드는 동료와 연결해 드립니다." data-en="After 2023, we're back at KCGS in 2026. On-site in Yeosu, tell us what you research and we'll match you with someone who builds in that area.">2023년에 이어 2026년, 다시 KCGS로 갑니다. 여수 현장에서, 무엇을 연구하는지 들려주시면 그 분야를 직접 만드는 동료와 연결해 드립니다.</p>
         <p data-ko="15~20분, 부담 없이. 이력서는 필요 없습니다 — 호기심만 가져오세요." data-en="15-20 minutes, no pressure. No résumé needed, just bring your curiosity.">15~20분, 부담 없이. 이력서는 필요 없습니다 — 호기심만 가져오세요.</p>
-        <div class="direct" data-ko-html="바로 메일: <a href='mailto:career@clo3d.com?subject=KCGS%202026%20Coffee%20Chat'>career@clo3d.com</a><br>채용 포털: <a href='https://jobs.lever.co/clovirtualfashion' target='_blank' rel='noopener'>jobs.lever.co/clovirtualfashion</a>" data-en-html="Email: <a href='mailto:career@clo3d.com?subject=KCGS%202026%20Coffee%20Chat'>career@clo3d.com</a><br>Jobs: <a href='https://jobs.lever.co/clovirtualfashion' target='_blank' rel='noopener'>jobs.lever.co/clovirtualfashion</a>">바로 메일: <a href='mailto:career@clo3d.com?subject=KCGS%202026%20Coffee%20Chat'>career@clo3d.com</a><br>채용 포털: <a href='https://jobs.lever.co/clovirtualfashion' target='_blank' rel='noopener'>jobs.lever.co/clovirtualfashion</a></div>
+        <a href="mailto:career@clo3d.com?subject=KCGS%202026%20Coffee%20Chat" class="cta cta-big">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8h14v4a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Z" stroke="currentColor" stroke-width="1.7"/><path d="M17 9h2.5a2.5 2.5 0 0 1 0 5H17" stroke="currentColor" stroke-width="1.7"/><path d="M7 3v2M11 3v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span data-ko="커피챗 신청" data-en="Book a coffee chat">커피챗 신청</span>
+        </a>
+        <div class="direct" data-ko-html="채용 포털: <a href='https://jobs.lever.co/clovirtualfashion' target='_blank' rel='noopener'>jobs.lever.co/clovirtualfashion</a>" data-en-html="Job portal: <a href='https://jobs.lever.co/clovirtualfashion' target='_blank' rel='noopener'>jobs.lever.co/clovirtualfashion</a>">채용 포털: <a href='https://jobs.lever.co/clovirtualfashion' target='_blank' rel='noopener'>jobs.lever.co/clovirtualfashion</a></div>
       </div>
-      <form id="chat-form" class="reveal" novalidate>
-        <div class="row2">
-          <div class="field">
-            <label for="f-name"><span data-ko="이름" data-en="Name">이름</span> <span class="req">*</span></label>
-            <input id="f-name" name="name" required data-ko-ph="홍길동" data-en-ph="Your name" placeholder="홍길동" />
-          </div>
-          <div class="field">
-            <label for="f-email"><span data-ko="이메일" data-en="Email">이메일</span> <span class="req">*</span></label>
-            <input id="f-email" name="email" type="email" required placeholder="you@univ.ac.kr" />
-          </div>
-        </div>
-        <div class="field">
-          <label for="f-lab" data-ko="소속 / 연구실" data-en="Affiliation / Lab">소속 / 연구실</label>
-          <input id="f-lab" name="lab" data-ko-ph="○○대학교 그래픽스 연구실" data-en-ph="University · Graphics Lab" placeholder="○○대학교 그래픽스 연구실" />
-        </div>
-        <div class="row2">
-          <div class="field">
-            <label for="f-area" data-ko="관심 분야" data-en="Research area">관심 분야</label>
-            <select id="f-area" name="area">
-              <option value="simulation" data-ko="물리 / 클로스 시뮬레이션" data-en="Physics / cloth simulation">물리 / 클로스 시뮬레이션</option>
-              <option value="geometry" data-ko="기하 처리 / 충돌" data-en="Geometry / collision">기하 처리 / 충돌</option>
-              <option value="rendering" data-ko="렌더링 / 셰이딩" data-en="Rendering / shading">렌더링 / 셰이딩</option>
-              <option value="gpu" data-ko="GPU / 병렬 컴퓨팅" data-en="GPU / parallel computing">GPU / 병렬 컴퓨팅</option>
-              <option value="ml" data-ko="ML for Graphics" data-en="ML for Graphics">ML for Graphics</option>
-              <option value="other" data-ko="기타" data-en="Other">기타</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-day" data-ko="희망 날짜" data-en="Preferred day">희망 날짜</label>
-            <select id="f-day" name="day">
-              <option value="Jul 1">2026.07.01 (수)</option>
-              <option value="Jul 2">2026.07.02 (목)</option>
-              <option value="Jul 3">2026.07.03 (금)</option>
-              <option value="any" data-ko="아무 때나" data-en="Any day">아무 때나</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="f-msg" data-ko="무엇을 연구하나요?" data-en="What do you work on?">무엇을 연구하나요?</label>
-          <textarea id="f-msg" name="msg" data-ko-ph="요즘 풀고 있는 문제나 궁금한 점을 한두 줄로." data-en-ph="A line or two on what you're solving or curious about." placeholder="요즘 풀고 있는 문제나 궁금한 점을 한두 줄로."></textarea>
-        </div>
-        <button type="submit" class="cta form-submit">
-          <span data-ko="커피챗 신청 보내기" data-en="Send coffee chat request">커피챗 신청 보내기</span>
-        </button>
-        <p class="form-note" data-ko="제출하면 작성한 내용으로 career@clo3d.com 메일이 열립니다." data-en="Submitting opens an email to career@clo3d.com prefilled with your details.">제출하면 작성한 내용으로 career@clo3d.com 메일이 열립니다.</p>
-      </form>
     </div>
   </section>
 
@@ -647,22 +608,6 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
   if(reduce||!('IntersectionObserver'in window)){els.forEach(e=>e.classList.add('in'));return;}
   const io=new IntersectionObserver((ents)=>{ents.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -8% 0px'});
   els.forEach(e=>io.observe(e));
-})();
-
-/* form -> mailto */
-(function(){
-  const f=document.getElementById('chat-form');
-  f.addEventListener('submit',(e)=>{
-    e.preventDefault();
-    if(!f.reportValidity()) return;
-    const g=id=>document.getElementById(id);
-    const sel=id=>{const s=g(id);return s.options[s.selectedIndex].text;};
-    const en=document.documentElement.lang==='en';
-    const L=en?{sub:'KCGS 2026 Coffee Chat',name:'Name',email:'Email',lab:'Affiliation/Lab',area:'Research area',day:'Preferred day',msg:'Notes'}
-              :{sub:'KCGS 2026 커피챗 신청',name:'이름',email:'이메일',lab:'소속/연구실',area:'관심 분야',day:'희망 날짜',msg:'메모'};
-    const body=[L.name+': '+g('f-name').value,L.email+': '+g('f-email').value,L.lab+': '+g('f-lab').value,L.area+': '+sel('f-area'),L.day+': '+sel('f-day'),'',L.msg+':',g('f-msg').value].join('\n');
-    window.location.href='mailto:career@clo3d.com?subject='+encodeURIComponent(L.sub)+'&body='+encodeURIComponent(body);
-  });
 })();
 
 /* HERO: faint ambient cloth backdrop (demoted, no HUD) */
