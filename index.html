@@ -61,11 +61,11 @@ header.scrolled{background:rgba(10,13,20,.88);border-bottom-color:var(--line)}
 
 /* HERO */
 .hero{position:relative;min-height:min(90vh,820px);display:flex;align-items:center;overflow:hidden}
-.hero-kv{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-kv::before{content:"";position:absolute;right:6%;top:50%;width:60%;height:78%;transform:translateY(-50%);background:radial-gradient(circle,rgba(64,169,255,.2),transparent 68%);filter:blur(48px)}
-.kv-float{position:absolute;right:clamp(-20px,3vw,56px);top:54%;width:auto;height:auto;max-height:min(64vh,520px);max-width:44vw;transform:translateY(-50%);filter:drop-shadow(0 50px 90px rgba(0,0,0,.55));animation:kvfloat 8s ease-in-out infinite;will-change:transform}
-@keyframes kvfloat{0%,100%{transform:translateY(-50%) rotate(-1deg)}50%{transform:translateY(-44%) rotate(1.2deg)}}
-@media(max-width:760px){.kv-float{right:50%;top:55%;max-width:78vw;max-height:50vh;transform:translateX(50%) translateY(-50%);opacity:.3}@keyframes kvfloat{0%,100%{transform:translateX(50%) translateY(-50%) rotate(-1deg)}50%{transform:translateX(50%) translateY(-44%) rotate(1.2deg)}}}
+.hero-kv{position:absolute;top:0;right:0;bottom:0;width:56%;z-index:0;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:92px 1.5vw 48px}
+.hero-kv::before{content:"";position:absolute;left:50%;top:50%;width:78%;height:66%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(64,169,255,.2),transparent 68%);filter:blur(48px)}
+.kv-float{max-width:96%;max-height:94%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 50px 90px rgba(0,0,0,.55));animation:kvfloat 8s ease-in-out infinite;will-change:transform}
+@keyframes kvfloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1.2deg)}}
+@media(max-width:760px){.hero-kv{width:100%;padding:72px 10vw 40px;opacity:.28}.kv-float{max-height:78%}}
 @media (prefers-reduced-motion:reduce){.kv-float{animation:none}}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(125% 95% at 80% 45%, transparent 40%, rgba(10,13,20,.6) 100%),linear-gradient(100deg, rgba(10,13,20,.94) 0%, rgba(10,13,20,.8) 38%, rgba(10,13,20,.25) 66%, transparent 82%)}
 .hero-inner{position:relative;z-index:2;width:100%;padding-block:clamp(64px,12vh,140px)}
@@ -191,7 +191,7 @@ header.scrolled{background:rgba(10,13,20,.88);border-bottom-color:var(--line)}
 .apply-tips{margin-top:30px;border:1px dashed var(--line-strong);border-radius:14px;padding:22px 24px;background:var(--void-2)}
 .apply-tips h4{font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--clo);margin-bottom:14px}
 .apply-tips li{list-style:none;position:relative;padding:6px 0 6px 20px;color:var(--mut);font-size:.92rem}
-.apply-tips li::before{content:"—";position:absolute;left:0;color:var(--mut-dim)}
+.apply-tips li::before{content:"-";position:absolute;left:0;color:var(--mut-dim)}
 
 /* coffee */
 #coffee{background:linear-gradient(180deg,var(--void),#070a10)}
@@ -286,19 +286,19 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
   <!-- HERO -->
   <section class="hero">
     <div class="hero-kv" aria-hidden="true">
-      <img src="assets/kv-jacket.png" alt="" class="kv-float" />
+      <img src="assets/kv-cloth.png" alt="" class="kv-float" />
     </div>
     <div class="wrap hero-inner">
       <div class="hero-grid">
         <div class="hero-eyebrow">
           <span class="tag-pill" data-ko="채용" data-en="Recruiting">채용</span>
-          <span class="ey"><span data-ko="여수" data-en="Yeosu">여수</span> · 2026.07.01–03</span>
+          <span class="ey"><span data-ko="여수" data-en="Yeosu">여수</span> · 2026.07.01-03</span>
         </div>
         <h1>
-          <span data-ko="KCGS 2026," data-en="KCGS 2026 —">KCGS 2026,</span><br>
+          <span data-ko="KCGS 2026," data-en="KCGS 2026,">KCGS 2026,</span><br>
           <span class="accent" data-ko="함께할 동료를 찾습니다." data-en="We're looking for our next colleagues.">함께할 동료를 찾습니다.</span>
         </h1>
-        <p class="sub" data-ko-html="3D 의상 시뮬레이션 알고리즘으로 의상과 관련된 모든 경험을 통합하는 회사. <b>2009년 서울에서 시작해 지금은 12개국</b>에서 일합니다 — 학회 현장에서 만나요." data-en-html="A company unifying every garment experience through 3D simulation algorithms. <b>From Seoul in 2009 to 12 countries today</b> — come find us at the conference.">3D 의상 시뮬레이션 알고리즘으로 의상과 관련된 모든 경험을 통합하는 회사. <b>2009년 서울에서 시작해 지금은 12개국</b>에서 일합니다 — 학회 현장에서 만나요.</p>
+        <p class="sub" data-ko-html="3D 의상 시뮬레이션 알고리즘으로 의상과 관련된 모든 경험을 통합하는 회사. <b>2009년 서울에서 시작해 지금은 14개국</b>에서 일합니다. 학회 현장에서 만나요." data-en-html="A company unifying every garment experience through 3D simulation algorithms. <b>From Seoul in 2009 to 14 countries today</b>. Come find us at the conference.">3D 의상 시뮬레이션 알고리즘으로 의상과 관련된 모든 경험을 통합하는 회사. <b>2009년 서울에서 시작해 지금은 14개국</b>에서 일합니다. 학회 현장에서 만나요.</p>
         <div class="hero-actions">
           <a href="#coffee" class="cta">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8h14v4a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Z" stroke="currentColor" stroke-width="1.7"/><path d="M17 9h2.5a2.5 2.5 0 0 1 0 5H17" stroke="currentColor" stroke-width="1.7"/><path d="M7 3v2M11 3v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
@@ -321,13 +321,13 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
       <div class="section-head reveal">
         <span class="ey"><span class="n">01</span> <span data-ko="회사 소개" data-en="About">회사 소개</span></span>
         <h2 data-ko="의상과 관련된 모든 것." data-en="Everything related to garments.">의상과 관련된 모든 것.</h2>
-        <p data-ko-html="클로버추얼패션은 3D 의상 시뮬레이션 알고리즘을 기반으로 <b>의상 디자인 소프트웨어부터 콘텐츠 관리·협업 플랫폼, 가상 피팅까지</b> 의상과 연관된 모든 분야를 디지털로 통합하는 글로벌 디지털 의상 솔루션 기업입니다. 2009년 초 서울에서 시작해, 17년이 흐른 지금 해외 12개국에 현지 오피스를 두고 있습니다." data-en-html="CLO Virtual Fashion is a global digital garment solutions company that, built on 3D garment simulation algorithms, digitally unifies every field related to clothing, <b>from design software to content-management and collaboration platforms to virtual fitting</b>. We started in Seoul in early 2009, and 17 years on we operate local offices in 12 countries overseas.">클로버추얼패션은 3D 의상 시뮬레이션 알고리즘을 기반으로 <b>의상 디자인 소프트웨어부터 콘텐츠 관리·협업 플랫폼, 가상 피팅까지</b> 의상과 연관된 모든 분야를 디지털로 통합하는 글로벌 디지털 의상 솔루션 기업입니다. 2009년 초 서울에서 시작해, 17년이 흐른 지금 해외 12개국에 현지 오피스를 두고 있습니다.</p>
+        <p data-ko-html="클로버추얼패션은 3D 의상 시뮬레이션 알고리즘을 기반으로 <b>의상 디자인 소프트웨어부터 콘텐츠 관리·협업 플랫폼, 가상 피팅까지</b> 의상과 연관된 모든 분야를 디지털로 통합하는 글로벌 디지털 의상 솔루션 기업입니다. 2009년 초 서울에서 시작해, 17년이 흐른 지금 해외 14개국에 현지 오피스를 두고 있습니다." data-en-html="CLO Virtual Fashion is a global digital garment solutions company that, built on 3D garment simulation algorithms, digitally unifies every field related to clothing, <b>from design software to content-management and collaboration platforms to virtual fitting</b>. We started in Seoul in early 2009, and 17 years on we operate local offices in 14 countries overseas.">클로버추얼패션은 3D 의상 시뮬레이션 알고리즘을 기반으로 <b>의상 디자인 소프트웨어부터 콘텐츠 관리·협업 플랫폼, 가상 피팅까지</b> 의상과 연관된 모든 분야를 디지털로 통합하는 글로벌 디지털 의상 솔루션 기업입니다. 2009년 초 서울에서 시작해, 17년이 흐른 지금 해외 14개국에 현지 오피스를 두고 있습니다.</p>
       </div>
       <div class="stat-row reveal">
         <div class="stat"><div class="num">2009</div><div class="lab" data-ko="서울에서 시작" data-en="Founded in Seoul">서울에서 시작</div></div>
         <div class="stat"><div class="num" data-ko="17년" data-en="17 yrs">17년</div><div class="lab" data-ko="함께한 시간" data-en="Years building">함께한 시간</div></div>
-        <div class="stat"><div class="num" data-ko="12개국" data-en="12">12개국</div><div class="lab" data-ko="해외 현지 오피스" data-en="Countries with local offices">해외 현지 오피스</div></div>
-        <div class="stat"><div class="num" data-ko="반 이상" data-en="50%+">반 이상</div><div class="lab" data-ko="해외 현지 구성원" data-en="Staff local to their region">해외 현지 구성원</div></div>
+        <div class="stat"><div class="num" data-ko="14개국" data-en="14">14개국</div><div class="lab" data-ko="해외 현지 오피스" data-en="Countries with local offices">해외 현지 오피스</div></div>
+        <div class="stat"><div class="num">500+</div><div class="lab" data-ko="전 세계 구성원" data-en="Employees worldwide">전 세계 구성원</div></div>
       </div>
     </div>
   </section>
@@ -340,7 +340,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
         <div style="margin-top:16px"><span class="award-badge">★ Academy Sci-Tech Award · 2024</span></div>
         <h2 data-ko="2D 패턴을 재봉해 3D로. 그 기술이 오스카 과학기술상을 받았습니다." data-en="Sewing 2D patterns into 3D. That technology won a Sci-Tech Oscar.">2D 패턴을 재봉해 3D로. 그 기술이 오스카 과학기술상을 받았습니다.</h2>
         <p data-ko-html="클로버추얼패션의 <b>Marvelous Designer</b>는 2024년 미국 영화예술과학아카데미(AMPAS) 과학기술상을 수상했습니다. 옷을 만드는 방식 그대로, 2D 패턴을 재봉해 3D로 시뮬레이션하는 기술이 영화·게임 제작 현장의 표준이 됐습니다." data-en-html="CLO Virtual Fashion's <b>Marvelous Designer</b> received a 2024 Scientific and Technical Award from the Academy (AMPAS). Its way of working, sewing 2D patterns into 3D the way real clothes are made, became a standard on film and game productions.">클로버추얼패션의 <b>Marvelous Designer</b>는 2024년 미국 영화예술과학아카데미(AMPAS) 과학기술상을 수상했습니다. 옷을 만드는 방식 그대로, 2D 패턴을 재봉해 3D로 시뮬레이션하는 기술이 영화·게임 제작 현장의 표준이 됐습니다.</p>
-        <p class="quote" data-ko="“디지털 의상 제작을 위한 패턴 기반 접근으로 디자인과 시각화를 통합하고, 실제 재단에 대응하는 가상의 방식을 제시했다.” — 아카데미 수상 사유" data-en="“A pattern-based approach to digital costume construction, unifying design and visualization and providing a virtual analogy to physical tailoring.” — Academy citation">“디지털 의상 제작을 위한 패턴 기반 접근으로 디자인과 시각화를 통합하고, 실제 재단에 대응하는 가상의 방식을 제시했다.” — 아카데미 수상 사유</p>
+        <p class="quote" data-ko="“디지털 의상 제작을 위한 패턴 기반 접근으로 디자인과 시각화를 통합하고, 실제 재단에 대응하는 가상의 방식을 제시했다.” (아카데미 수상 사유)" data-en="“A pattern-based approach to digital costume construction, unifying design and visualization and providing a virtual analogy to physical tailoring.” (Academy citation)">“디지털 의상 제작을 위한 패턴 기반 접근으로 디자인과 시각화를 통합하고, 실제 재단에 대응하는 가상의 방식을 제시했다.” (아카데미 수상 사유)</p>
       </div>
       <div class="films reveal">
         <div class="films-cap" data-ko="Marvelous Designer가 쓰인 작품" data-en="Built with Marvelous Designer">Marvelous Designer가 쓰인 작품</div>
@@ -415,7 +415,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
       <div class="section-head reveal">
         <span class="ey"><span class="n">04</span> <span data-ko="오피스" data-en="Offices">오피스</span></span>
         <h2 data-ko="지역 유저를 위해 성장하는 오피스." data-en="Offices that grow for their local users.">지역 유저를 위해 성장하는 오피스.</h2>
-        <p data-ko-html="유저가 필요로 하는 곳에 우리가 있습니다. 서울에서 시작했지만 지금은 12개국에 현지 오피스가 있고, <b>전체 구성원의 반 이상이 해외 현지인</b>입니다. 우리가 있는 자리가 곧 본사입니다." data-en-html="We are wherever our users need us. We began in Seoul, but now have local offices in 12 countries, and <b>more than half of our people are local to their region</b>. Wherever we are is headquarters.">유저가 필요로 하는 곳에 우리가 있습니다. 서울에서 시작했지만 지금은 12개국에 현지 오피스가 있고, <b>전체 구성원의 반 이상이 해외 현지인</b>입니다. 우리가 있는 자리가 곧 본사입니다.</p>
+        <p data-ko-html="유저가 필요로 하는 곳에 우리가 있습니다. 서울에서 시작했지만 지금은 14개국에 현지 오피스가 있고, <b>전체 구성원의 반 이상이 해외 현지인</b>입니다. 우리가 있는 자리가 곧 본사입니다." data-en-html="We are wherever our users need us. We began in Seoul, but now have local offices in 14 countries, and <b>more than half of our people are local to their region</b>. Wherever we are is headquarters.">유저가 필요로 하는 곳에 우리가 있습니다. 서울에서 시작했지만 지금은 14개국에 현지 오피스가 있고, <b>전체 구성원의 반 이상이 해외 현지인</b>입니다. 우리가 있는 자리가 곧 본사입니다.</p>
       </div>
       <div class="tl reveal">
         <div class="tl-item first"><div class="tl-year">2009</div><div class="tl-city">Seoul<span class="hq">HQ · 본사</span></div></div>
@@ -464,7 +464,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
         <div class="val">
           <div class="vn">04</div>
           <h3 data-ko="우리는 공감을 바탕으로 행동합니다." data-en="We act on empathy.">우리는 공감을 바탕으로 행동합니다.</h3>
-          <p data-ko="공감은 다른 사람을 이해하는 능력입니다. 서로 연결되어 일할 때 동료의 일·생각·감정을 이해하는 것은 매우 중요하며, 공감을 통해 세상을 다른 관점에서 보고 더 나은 방식을 찾습니다." data-en="Empathy is the ability to understand others. When we work connected, understanding colleagues' work, thoughts, and feelings matters — empathy lets us see differently and find better ways.">공감은 다른 사람을 이해하는 능력입니다. 서로 연결되어 일할 때 동료의 일·생각·감정을 이해하는 것은 매우 중요하며, 공감을 통해 세상을 다른 관점에서 보고 더 나은 방식을 찾습니다.</p>
+          <p data-ko="공감은 다른 사람을 이해하는 능력입니다. 서로 연결되어 일할 때 동료의 일·생각·감정을 이해하는 것은 매우 중요하며, 공감을 통해 세상을 다른 관점에서 보고 더 나은 방식을 찾습니다." data-en="Empathy is the ability to understand others. When we work connected, understanding colleagues' work, thoughts, and feelings matters. Empathy lets us see differently and find better ways.">공감은 다른 사람을 이해하는 능력입니다. 서로 연결되어 일할 때 동료의 일·생각·감정을 이해하는 것은 매우 중요하며, 공감을 통해 세상을 다른 관점에서 보고 더 나은 방식을 찾습니다.</p>
         </div>
       </div>
       <div class="philo reveal" style="margin-top:22px">
@@ -509,7 +509,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
             <li data-ko="장기 근속 휴가" data-en="Long-service leave">장기 근속 휴가</li>
             <li data-ko="연 1회 건강검진" data-en="Annual health checkup">연 1회 건강검진</li>
             <li data-ko="제주도 한 달 살기 및 숙소 지원" data-en="One-month-in-Jeju program with lodging">제주도 한 달 살기 및 숙소 지원</li>
-            <li data-ko="Year end Holiday (12/25–1/1)" data-en="Year end Holiday (12/25–1/1)">Year end Holiday (12/25–1/1)</li>
+            <li data-ko="Year end Holiday (12/25-1/1)" data-en="Year end Holiday (12/25-1/1)">Year end Holiday (12/25-1/1)</li>
           </ul>
         </div>
       </div>
@@ -524,7 +524,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
       <div class="section-head reveal">
         <span class="ey"><span class="n">07</span> Life</span>
         <h2 data-ko="클로의 일상, 클로 라이프." data-en="Daily life at CLO.">클로의 일상, 클로 라이프.</h2>
-        <p data-ko-html="구성원이 직접 남긴 기록으로 클로를 들여다보세요. 그리고 — <b>우리는 이미 KCGS에 있었습니다.</b>" data-en-html="See CLO through records our own people wrote. And — <b>we've already been to KCGS.</b>">구성원이 직접 남긴 기록으로 클로를 들여다보세요. 그리고 — <b>우리는 이미 KCGS에 있었습니다.</b></p>
+        <p data-ko-html="구성원이 직접 남긴 기록으로 클로를 들여다보세요. 그리고 <b>우리는 이미 KCGS에 있었습니다.</b>" data-en-html="See CLO through records our own people wrote. And <b>we've already been to KCGS.</b>">구성원이 직접 남긴 기록으로 클로를 들여다보세요. 그리고 <b>우리는 이미 KCGS에 있었습니다.</b></p>
       </div>
       <div class="life-grid reveal">
         <a class="life-item kcgs" href="https://www.clovirtualfashion-careers.com/014c3a2c-b9ca-4a5a-9b99-4f9eb10ee7e5" target="_blank" rel="noopener">
@@ -534,11 +534,11 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
         </a>
         <a class="life-item" href="https://www.clovirtualfashion-careers.com/1dcaee51-eb5c-8059-977b-f4b63bfa61f7" target="_blank" rel="noopener">
           <div class="life-kind" data-ko="직무 인터뷰" data-en="Job interview">직무 인터뷰</div>
-          <div class="life-title" data-ko="Machine Learning Chapter — 유저의 시간을 절약하기 위해 시간을 쏟다" data-en="Machine Learning Chapter — spending our time to save users' time">Machine Learning Chapter — 유저의 시간을 절약하기 위해 시간을 쏟다</div>
+          <div class="life-title" data-ko="Machine Learning Chapter, 유저의 시간을 절약하기 위해 시간을 쏟다" data-en="Machine Learning Chapter, spending our time to save users' time">Machine Learning Chapter, 유저의 시간을 절약하기 위해 시간을 쏟다</div>
         </a>
         <a class="life-item" href="https://www.clovirtualfashion-careers.com/200aee51-eb5c-8085-ba10-d30054ab7778" target="_blank" rel="noopener">
           <div class="life-kind" data-ko="직무 인터뷰" data-en="Job interview">직무 인터뷰</div>
-          <div class="life-title" data-ko="User Experience Designer — 유저의 관점으로 일해요" data-en="User Experience Designer — we work from the user's perspective">User Experience Designer — 유저의 관점으로 일해요</div>
+          <div class="life-title" data-ko="User Experience Designer, 유저의 관점으로 일해요" data-en="User Experience Designer, we work from the user's perspective">User Experience Designer, 유저의 관점으로 일해요</div>
         </a>
         <a class="life-item" href="https://www.clovirtualfashion-careers.com/5ccb2673-9e2c-4273-99ee-903e2db47c7c" target="_blank" rel="noopener">
           <div class="life-kind" data-ko="CLO 라이프" data-en="CLO Life">CLO 라이프</div>
@@ -546,7 +546,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
         </a>
         <a class="life-item" href="https://www.clovirtualfashion-careers.com/24daee51-eb5c-80a5-b53f-c7ba049e965b" target="_blank" rel="noopener">
           <div class="life-kind" data-ko="CLO 라이프" data-en="CLO Life">CLO 라이프</div>
-          <div class="life-title" data-ko="제주에서 만나요 — 제주 오피스 이야기" data-en="See you in Jeju — the Jeju office">제주에서 만나요 — 제주 오피스 이야기</div>
+          <div class="life-title" data-ko="제주에서 만나요, 제주 오피스 이야기" data-en="See you in Jeju, the Jeju office">제주에서 만나요, 제주 오피스 이야기</div>
         </a>
       </div>
     </div>
@@ -559,11 +559,11 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
         <span class="ey"><span class="n">08</span> <span data-ko="커피챗" data-en="Coffee chat">커피챗</span></span>
         <h2 data-ko="KCGS 2026 기간 동안, 커피 한 잔." data-en="Coffee, all through KCGS 2026.">KCGS 2026 기간 동안, 커피 한 잔.</h2>
         <div class="coffee-when">
-          <span class="tag-pill">📅 2026.07.01–03</span>
+          <span class="tag-pill">📅 2026.07.01-03</span>
           <span class="tag-pill" data-ko="📍 여수 · 학회 현장" data-en="📍 Yeosu · on-site">📍 여수 · 학회 현장</span>
         </div>
-        <p data-ko="학회 기간 동안 학회장에 AI 엔지니어와 SW 엔지니어가 있어요. 부담 없는 커피챗, 편하게 신청하세요." data-en="Our AI and software engineers are at the venue throughout the conference. Come for a relaxed coffee chat — just sign up.">학회 기간 동안 학회장에 AI 엔지니어와 SW 엔지니어가 있어요. 부담 없는 커피챗, 편하게 신청하세요.</p>
-        <a id="coffee-btn" href="mailto:career@clo3d.com?subject=KCGS%202026%20Coffee%20Chat" class="cta cta-big">
+        <p data-ko="학회 기간 동안 학회장에 AI 엔지니어와 SW 엔지니어가 있어요. 부담 없는 커피챗, 편하게 신청하세요." data-en="Our AI and software engineers are at the venue throughout the conference. Come for a relaxed coffee chat. Just sign up.">학회 기간 동안 학회장에 AI 엔지니어와 SW 엔지니어가 있어요. 부담 없는 커피챗, 편하게 신청하세요.</p>
+        <a id="coffee-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc5UX7MNbvw2guOK_hiL6GsI1Kldh2bI7zaf5LdEuWtUgmzyA/viewform" target="_blank" rel="noopener" class="cta cta-big">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8h14v4a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Z" stroke="currentColor" stroke-width="1.7"/><path d="M17 9h2.5a2.5 2.5 0 0 1 0 5H17" stroke="currentColor" stroke-width="1.7"/><path d="M7 3v2M11 3v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
           <span data-ko="커피챗 신청" data-en="Book a coffee chat">커피챗 신청</span>
         </a>
@@ -600,13 +600,13 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
           <h4 data-ko="학회" data-en="Conference">학회</h4>
           <a href="https://cg-korea.org/conference/27/" target="_blank" rel="noopener">KCGS 2026</a>
           <span data-ko="여수, 대한민국" data-en="Yeosu, Korea">여수, 대한민국</span>
-          <span>2026.07.01–03</span>
+          <span>2026.07.01-03</span>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
       <span class="mono">© 2026 CLO Virtual Fashion · KCGS Recruiting</span>
-      <span class="mono" data-ko="여수에서 만나요 · 2026.07.01–03" data-en="See you in Yeosu · 2026.07.01–03">여수에서 만나요 · 2026.07.01–03</span>
+      <span class="mono" data-ko="여수에서 만나요 · 2026.07.01-03" data-en="See you in Yeosu · 2026.07.01-03">여수에서 만나요 · 2026.07.01-03</span>
     </div>
   </div>
 </footer>
