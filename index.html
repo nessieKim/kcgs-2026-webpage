@@ -98,7 +98,9 @@ header.scrolled{background:rgba(10,13,20,.88);border-bottom-color:var(--line)}
 
 /* credential strip */
 #cred{background:linear-gradient(180deg,var(--void),var(--void-2))}
-.cred-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,64px);align-items:center}
+.cred-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,64px);align-items:start}
+.cred-side{display:flex;flex-direction:column;gap:18px}
+.award-img{width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 26px 54px -22px rgba(0,0,0,.6);display:block}
 @media(max-width:880px){.cred-grid{grid-template-columns:1fr}}
 .award-badge{font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--clo);display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-strong);border-radius:999px;padding:6px 14px}
 .cred h2{font-family:var(--ff-disp);font-weight:600;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.08;letter-spacing:-.02em;margin:18px 0}
@@ -327,7 +329,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
         <div class="stat"><div class="num">2009</div><div class="lab" data-ko="서울에서 시작" data-en="Founded in Seoul">서울에서 시작</div></div>
         <div class="stat"><div class="num" data-ko="17년" data-en="17 yrs">17년</div><div class="lab" data-ko="함께한 시간" data-en="Years building">함께한 시간</div></div>
         <div class="stat"><div class="num" data-ko="14개국" data-en="14">14개국</div><div class="lab" data-ko="해외 현지 오피스" data-en="Countries with local offices">해외 현지 오피스</div></div>
-        <div class="stat"><div class="num">500+</div><div class="lab" data-ko="전 세계 구성원" data-en="Employees worldwide">전 세계 구성원</div></div>
+        <div class="stat"><div class="num">480+</div><div class="lab" data-ko="전 세계 구성원" data-en="Employees worldwide">전 세계 구성원</div></div>
       </div>
     </div>
   </section>
@@ -342,14 +344,17 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
         <p data-ko-html="클로버추얼패션의 <b>Marvelous Designer</b>는 2024년 미국 영화예술과학아카데미(AMPAS) 과학기술상을 수상했습니다. 옷을 만드는 방식 그대로, 2D 패턴을 재봉해 3D로 시뮬레이션하는 기술이 영화·게임 제작 현장의 표준이 됐습니다." data-en-html="CLO Virtual Fashion's <b>Marvelous Designer</b> received a 2024 Scientific and Technical Award from the Academy (AMPAS). Its way of working, sewing 2D patterns into 3D the way real clothes are made, became a standard on film and game productions.">클로버추얼패션의 <b>Marvelous Designer</b>는 2024년 미국 영화예술과학아카데미(AMPAS) 과학기술상을 수상했습니다. 옷을 만드는 방식 그대로, 2D 패턴을 재봉해 3D로 시뮬레이션하는 기술이 영화·게임 제작 현장의 표준이 됐습니다.</p>
         <p class="quote" data-ko="“디지털 의상 제작을 위한 패턴 기반 접근으로 디자인과 시각화를 통합하고, 실제 재단에 대응하는 가상의 방식을 제시했다.” (아카데미 수상 사유)" data-en="“A pattern-based approach to digital costume construction, unifying design and visualization and providing a virtual analogy to physical tailoring.” (Academy citation)">“디지털 의상 제작을 위한 패턴 기반 접근으로 디자인과 시각화를 통합하고, 실제 재단에 대응하는 가상의 방식을 제시했다.” (아카데미 수상 사유)</p>
       </div>
-      <div class="films reveal">
-        <div class="films-cap" data-ko="Marvelous Designer가 쓰인 작품" data-en="Built with Marvelous Designer">Marvelous Designer가 쓰인 작품</div>
-        <div class="film"><span class="t">Assassin's Creed Shadows <span class="st">Ubisoft</span></span><span class="y">2025</span></div>
-        <div class="film"><span class="t">Civilization VII <span class="st">2K</span></span><span class="y">2025</span></div>
-        <div class="film"><span class="t">Path of Exile 2 <span class="st">Grinding Gear</span></span><span class="y">2024</span></div>
-        <div class="film"><span class="t">Diablo IV <span class="st">Blizzard</span></span><span class="y">2023</span></div>
-        <div class="film"><span class="t">Avatar: The Way of Water <span class="st">Wētā FX</span></span><span class="y">2022</span></div>
-        <div class="film"><span class="t">Doctor Strange in the Multiverse of Madness <span class="st">Marvel</span></span><span class="y">2022</span></div>
+      <div class="cred-side reveal">
+        <img class="award-img" src="assets/award-md-oscar.png" alt="Marvelous Designer wins the 2024 Academy Sci-Tech Award" />
+        <div class="films">
+          <div class="films-cap" data-ko="Marvelous Designer가 쓰인 작품" data-en="Built with Marvelous Designer">Marvelous Designer가 쓰인 작품</div>
+          <div class="film"><span class="t">Assassin's Creed Shadows <span class="st">Ubisoft</span></span><span class="y">2025</span></div>
+          <div class="film"><span class="t">Civilization VII <span class="st">2K</span></span><span class="y">2025</span></div>
+          <div class="film"><span class="t">Path of Exile 2 <span class="st">Grinding Gear</span></span><span class="y">2024</span></div>
+          <div class="film"><span class="t">Diablo IV <span class="st">Blizzard</span></span><span class="y">2023</span></div>
+          <div class="film"><span class="t">Avatar: The Way of Water <span class="st">Wētā FX</span></span><span class="y">2022</span></div>
+          <div class="film"><span class="t">Doctor Strange in the Multiverse of Madness <span class="st">Marvel</span></span><span class="y">2022</span></div>
+        </div>
       </div>
     </div>
   </section>
