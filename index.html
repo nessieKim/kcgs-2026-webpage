@@ -135,7 +135,16 @@ header.scrolled{background:rgba(10,13,20,.88);border-bottom-color:var(--line)}
 /* offices timeline */
 #offices{background:linear-gradient(180deg,var(--void-2),var(--void))}
 .tl{position:relative;padding-left:34px;margin-top:8px;columns:2;column-gap:54px}
-@media(max-width:680px){.tl{columns:1}}
+@media(max-width:680px){
+  .tl{columns:auto;display:grid;grid-template-columns:1fr 1fr;gap:9px 12px;padding-left:0;margin-top:14px}
+  .tl::before{display:none}
+  .tl-item{padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--void-2)}
+  .tl-item::before{display:none}
+  .tl-item.first{border-color:color-mix(in srgb,var(--clo) 45%,transparent);background:rgba(64,169,255,.06)}
+  .tl-year{font-size:12px}
+  .tl-city{font-size:.92rem}
+  .tl-city .hq{display:block;margin-left:0;margin-top:2px}
+}
 .tl::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:1px;background:var(--stitch-v)}
 .tl-item{position:relative;padding:9px 0;break-inside:avoid}
 .tl-item::before{content:"";position:absolute;left:-30px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--void);border:1.5px solid var(--clo)}
