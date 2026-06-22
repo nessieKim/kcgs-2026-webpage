@@ -248,6 +248,17 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
 .foot-bottom{margin-top:46px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
 .foot-bottom .mono{font-size:11px;color:var(--mut-dim);letter-spacing:.04em}
 
+/* showreel */
+#reel .section-head{margin-bottom:clamp(28px,4vw,44px)}
+.reel-frame{position:relative;max-width:1000px;margin:0 auto;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 34px 80px -30px rgba(0,0,0,.75);background:#000}
+.reel-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.reel-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.reel-play{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:none}
+.reel-play::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,13,20,.12),rgba(10,13,20,.46))}
+.reel-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;width:82px;height:82px;border-radius:50%;background:var(--clo);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 44px -8px rgba(64,169,255,.85);transition:transform .2s,background .2s}
+.reel-play:hover .reel-btn{transform:translate(-50%,-50%) scale(1.08);background:#5cb6ff}
+.reel-btn svg{width:30px;height:30px;margin-left:5px;fill:#04101f}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
@@ -311,6 +322,22 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
         <div class="spectrum" aria-hidden="true">
           <i style="background:var(--clo)"></i><i style="background:var(--md)"></i><i style="background:var(--jinny)"></i><i style="background:var(--closet)"></i><i style="background:var(--connect)"></i><i style="background:var(--clo-deep)"></i>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWREEL -->
+  <section class="section" id="reel">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align:center;margin-inline:auto">
+        <span class="ey" style="justify-content:center">SHOWREEL</span>
+        <h2 data-ko="영상으로 보는 클로." data-en="CLO, in motion.">영상으로 보는 클로.</h2>
+      </div>
+      <div class="reel-frame reveal">
+        <button class="reel-play" id="reel-play" type="button" data-id="GBG38IlLjZE" aria-label="Play showreel">
+          <img src="https://i.ytimg.com/vi/GBG38IlLjZE/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/GBG38IlLjZE/hqdefault.jpg'" alt="" />
+          <span class="reel-btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+        </button>
       </div>
     </div>
   </section>
@@ -489,7 +516,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
       <div class="section-head reveal">
         <span class="ey"><span class="n">06</span> Life</span>
         <h2 data-ko="클로의 일상, 클로 라이프." data-en="Daily life at CLO.">클로의 일상, 클로 라이프.</h2>
-        <p data-ko-html="구성원이 직접 남긴 기록으로 클로를 들여다보세요. 그리고 <b>우리는 이미 KCGS에 있었습니다.</b>" data-en-html="See CLO through records our own people wrote. And <b>we've already been to KCGS.</b>">구성원이 직접 남긴 기록으로 클로를 들여다보세요. 그리고 <b>우리는 이미 KCGS에 있었습니다.</b></p>
+        <p data-ko="구성원이 직접 남긴 기록으로 클로를 들여다보세요." data-en="See CLO through the records our own people wrote.">구성원이 직접 남긴 기록으로 클로를 들여다보세요.</p>
       </div>
       <div class="life-grid reveal">
         <a class="life-item kcgs" href="https://www.clovirtualfashion-careers.com/014c3a2c-b9ca-4a5a-9b99-4f9eb10ee7e5" target="_blank" rel="noopener">
@@ -616,6 +643,20 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
     ents.forEach(e=>fab.classList.toggle('converged', e.isIntersecting));
   },{rootMargin:'0px 0px -12% 0px'});
   io.observe(target);
+})();
+
+/* showreel: click facade -> youtube iframe (loads only on click) */
+(function(){
+  const p=document.getElementById('reel-play'); if(!p) return;
+  p.addEventListener('click',()=>{
+    const id=p.getAttribute('data-id');
+    const f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    f.title='KCGS Showreel';
+    f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');
+    f.setAttribute('allowfullscreen','');
+    p.replaceWith(f);
+  });
 })();
 </script>
 </body>
