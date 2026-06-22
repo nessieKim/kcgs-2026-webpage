@@ -66,8 +66,8 @@ header.scrolled{background:rgba(10,13,20,.88);border-bottom-color:var(--line)}
 .hero-inner{position:relative;z-index:2;width:100%;padding-block:clamp(64px,12vh,140px)}
 .hero-grid{display:flex;flex-direction:column;gap:26px;max-width:720px}
 .hero-eyebrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.hero h1{font-family:var(--ff-disp);font-weight:700;font-size:clamp(2.7rem,8vw,5.8rem);line-height:1;letter-spacing:-.03em}
-:lang(ko) .hero h1{line-height:1.08}
+.hero h1{font-family:var(--ff-disp);font-weight:700;font-size:clamp(2rem,4.8vw,3.4rem);line-height:1.12;letter-spacing:-.02em}
+:lang(ko) .hero h1{line-height:1.2}
 .hero h1 .accent{background:linear-gradient(96deg,var(--clo-light),var(--clo));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p.sub{font-size:clamp(1.02rem,1.6vw,1.26rem);color:var(--mut);max-width:50ch}
 .hero p.sub b{color:var(--ink);font-weight:500}
@@ -163,7 +163,9 @@ header.scrolled{background:rgba(10,13,20,.88);border-bottom-color:var(--line)}
 
 /* life */
 .life-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-.life-item{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--void);transition:border-color .3s,transform .25s}
+.life-item{display:block;border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--void);transition:border-color .3s,transform .25s}
+.life-item .life-title{transition:color .2s}
+.life-item:hover .life-title{color:var(--clo-light)}
 .life-item:hover{border-color:var(--line-strong);transform:translateY(-2px)}
 .life-item.kcgs{border-color:color-mix(in srgb,var(--clo) 45%,transparent);background:rgba(64,169,255,.05)}
 .life-kind{font-family:var(--ff-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut-dim)}
@@ -258,13 +260,13 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
       <div class="hero-grid">
         <div class="hero-eyebrow">
           <span class="tag-pill" data-ko="채용" data-en="Recruiting">채용</span>
-          <span class="ey">KCGS 2026 · <span data-ko="여수" data-en="Yeosu">여수</span> · 07.01–03</span>
+          <span class="ey"><span data-ko="여수" data-en="Yeosu">여수</span> · 2026.07.01–03</span>
         </div>
         <h1>
-          <span data-ko="의상과 관련된" data-en="Everything">의상과 관련된</span><br>
-          <span class="accent" data-ko="모든 것." data-en="about garments.">모든 것.</span>
+          <span data-ko="KCGS 2026," data-en="KCGS 2026 —">KCGS 2026,</span><br>
+          <span class="accent" data-ko="함께할 동료를 찾습니다." data-en="We're looking for our next colleagues.">함께할 동료를 찾습니다.</span>
         </h1>
-        <p class="sub" data-ko-html="3D 의상 시뮬레이션 알고리즘을 기반으로 의상과 관련된 모든 경험을 통합합니다. <b>2009년 서울에서 시작해 17년</b>, 클로버추얼패션이 KCGS 2026에서 함께할 동료를 만납니다." data-en-html="Built on 3D garment simulation algorithms, we unify every experience related to clothing. <b>17 years on from Seoul, 2009</b>, CLO Virtual Fashion is at KCGS 2026 to meet who's next.">3D 의상 시뮬레이션 알고리즘을 기반으로 의상과 관련된 모든 경험을 통합합니다. <b>2009년 서울에서 시작해 17년</b>, 클로버추얼패션이 KCGS 2026에서 함께할 동료를 만납니다.</p>
+        <p class="sub" data-ko-html="3D 의상 시뮬레이션 알고리즘으로 의상과 관련된 모든 경험을 통합하는 회사. <b>2009년 서울에서 시작해 지금은 12개국</b>에서 일합니다 — 학회 현장에서 만나요." data-en-html="A company unifying every garment experience through 3D simulation algorithms. <b>From Seoul in 2009 to 12 countries today</b> — come find us at the conference.">3D 의상 시뮬레이션 알고리즘으로 의상과 관련된 모든 경험을 통합하는 회사. <b>2009년 서울에서 시작해 지금은 12개국</b>에서 일합니다 — 학회 현장에서 만나요.</p>
         <div class="hero-actions">
           <a href="#coffee" class="cta">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 8h14v4a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Z" stroke="currentColor" stroke-width="1.7"/><path d="M17 9h2.5a2.5 2.5 0 0 1 0 5H17" stroke="currentColor" stroke-width="1.7"/><path d="M7 3v2M11 3v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
@@ -286,7 +288,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
     <div class="wrap">
       <div class="section-head reveal">
         <span class="ey"><span class="n">01</span> <span data-ko="회사 소개" data-en="About">회사 소개</span></span>
-        <h2 data-ko="세상 모든 옷의 시작과 끝." data-en="The beginning and end of every garment.">세상 모든 옷의 시작과 끝.</h2>
+        <h2 data-ko="의상과 관련된 모든 것." data-en="Everything related to garments.">의상과 관련된 모든 것.</h2>
         <p data-ko-html="클로버추얼패션은 3D 의상 시뮬레이션 알고리즘을 기반으로 <b>의상 디자인 소프트웨어부터 콘텐츠 관리·협업 플랫폼, 가상 피팅까지</b> 의상과 연관된 모든 분야를 디지털로 통합하는 글로벌 디지털 의상 솔루션 기업입니다. 2009년 초 서울에서 시작해, 17년이 흐른 지금 해외 12개국에 현지 오피스를 두고 있습니다." data-en-html="CLO Virtual Fashion is a global digital garment solutions company that, built on 3D garment simulation algorithms, digitally unifies every field related to clothing, <b>from design software to content-management and collaboration platforms to virtual fitting</b>. We started in Seoul in early 2009, and 17 years on we operate local offices in 12 countries overseas.">클로버추얼패션은 3D 의상 시뮬레이션 알고리즘을 기반으로 <b>의상 디자인 소프트웨어부터 콘텐츠 관리·협업 플랫폼, 가상 피팅까지</b> 의상과 연관된 모든 분야를 디지털로 통합하는 글로벌 디지털 의상 솔루션 기업입니다. 2009년 초 서울에서 시작해, 17년이 흐른 지금 해외 12개국에 현지 오피스를 두고 있습니다.</p>
       </div>
       <div class="stat-row reveal">
@@ -493,77 +495,27 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
         <p data-ko-html="구성원이 직접 남긴 기록으로 클로를 들여다보세요. 그리고 — <b>우리는 이미 KCGS에 있었습니다.</b>" data-en-html="See CLO through records our own people wrote. And — <b>we've already been to KCGS.</b>">구성원이 직접 남긴 기록으로 클로를 들여다보세요. 그리고 — <b>우리는 이미 KCGS에 있었습니다.</b></p>
       </div>
       <div class="life-grid reveal">
-        <div class="life-item kcgs">
+        <a class="life-item kcgs" href="https://www.clovirtualfashion-careers.com/014c3a2c-b9ca-4a5a-9b99-4f9eb10ee7e5" target="_blank" rel="noopener">
           <div class="life-kind" data-ko="직무 / 채용" data-en="Job / Hiring">직무 / 채용</div>
           <div class="life-title" data-ko="2023 KCGS 학술대회 참여기" data-en="2023 KCGS Conference attendance report">2023 KCGS 학술대회 참여기</div>
           <div class="life-tags">#개발자채용 #ComputerGraphics</div>
-        </div>
-        <div class="life-item">
+        </a>
+        <a class="life-item" href="https://www.clovirtualfashion-careers.com/1dcaee51-eb5c-8059-977b-f4b63bfa61f7" target="_blank" rel="noopener">
           <div class="life-kind" data-ko="직무 인터뷰" data-en="Job interview">직무 인터뷰</div>
           <div class="life-title" data-ko="Machine Learning Chapter — 유저의 시간을 절약하기 위해 시간을 쏟다" data-en="Machine Learning Chapter — spending our time to save users' time">Machine Learning Chapter — 유저의 시간을 절약하기 위해 시간을 쏟다</div>
-        </div>
-        <div class="life-item">
+        </a>
+        <a class="life-item" href="https://www.clovirtualfashion-careers.com/200aee51-eb5c-8085-ba10-d30054ab7778" target="_blank" rel="noopener">
           <div class="life-kind" data-ko="직무 인터뷰" data-en="Job interview">직무 인터뷰</div>
           <div class="life-title" data-ko="User Experience Designer — 유저의 관점으로 일해요" data-en="User Experience Designer — we work from the user's perspective">User Experience Designer — 유저의 관점으로 일해요</div>
-        </div>
-        <div class="life-item">
-          <div class="life-kind" data-ko="CLO 라이프" data-en="CLO Life">CLO 라이프</div>
-          <div class="life-title" data-ko="신규입사자 필수교양: CLO SW Training" data-en="New-hire essentials: CLO SW Training">신규입사자 필수교양: CLO SW Training</div>
-        </div>
-        <div class="life-item">
+        </a>
+        <a class="life-item" href="https://www.clovirtualfashion-careers.com/5ccb2673-9e2c-4273-99ee-903e2db47c7c" target="_blank" rel="noopener">
           <div class="life-kind" data-ko="CLO 라이프" data-en="CLO Life">CLO 라이프</div>
           <div class="life-title" data-ko="역삼 오피스를 소개해요 (feat. GFC)" data-en="Meet the Yeoksam office (feat. GFC)">역삼 오피스를 소개해요 (feat. GFC)</div>
-        </div>
-        <div class="life-item">
+        </a>
+        <a class="life-item" href="https://www.clovirtualfashion-careers.com/24daee51-eb5c-80a5-b53f-c7ba049e965b" target="_blank" rel="noopener">
           <div class="life-kind" data-ko="CLO 라이프" data-en="CLO Life">CLO 라이프</div>
           <div class="life-title" data-ko="제주에서 만나요 — 제주 오피스 이야기" data-en="See you in Jeju — the Jeju office">제주에서 만나요 — 제주 오피스 이야기</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CAREERS PROCESS -->
-  <section class="section" id="careers">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="ey"><span class="n">08</span> Careers</span>
-        <h2 data-ko="채용은 이렇게 진행됩니다." data-en="How hiring works.">채용은 이렇게 진행됩니다.</h2>
-        <p data-ko="정해진 이력서 양식은 없습니다. 자신의 경험을 가장 잘 드러내는 방식으로 자유롭게 작성하세요." data-en="There is no fixed resume format. Write freely, in the way that best shows your experience.">정해진 이력서 양식은 없습니다. 자신의 경험을 가장 잘 드러내는 방식으로 자유롭게 작성하세요.</p>
-      </div>
-      <div class="proc reveal">
-        <div class="step">
-          <div class="step-n">STEP 01</div>
-          <h3 data-ko="지원서 작성" data-en="Application">지원서 작성</h3>
-          <p data-ko="자유 양식으로 작성하고 가급적 PDF로 업로드하세요. 개발 직군은 사용하는 기술 스택을 이력서에 적어주세요." data-en="Write in a free format and upload as PDF where possible. For developer roles, list the tech stack you use.">자유 양식으로 작성하고 가급적 PDF로 업로드하세요. 개발 직군은 사용하는 기술 스택을 이력서에 적어주세요.</p>
-        </div>
-        <div class="step">
-          <div class="step-n">STEP 02</div>
-          <h3 data-ko="전화 인터뷰" data-en="Phone interview">전화 인터뷰</h3>
-          <p data-ko="채용팀과 30~40분가량 진행합니다." data-en="About 30-40 minutes with the recruiting team.">채용팀과 30~40분가량 진행합니다.</p>
-        </div>
-        <div class="step">
-          <div class="step-n">STEP 03</div>
-          <h3 data-ko="과제 전형" data-en="Assignment round">과제 전형</h3>
-          <p data-ko="포지션에 따라 약 2~7일가량 진행합니다." data-en="About 2-7 days, depending on the position.">포지션에 따라 약 2~7일가량 진행합니다.</p>
-        </div>
-        <div class="step">
-          <div class="step-n">STEP 04</div>
-          <h3 data-ko="인터뷰 전형" data-en="Interview round">인터뷰 전형</h3>
-          <p data-ko="한 시간가량 온라인(Google Meet/Zoom) 또는 대면으로 진행하며, 면접관은 동일하거나 유관 직무의 동료입니다. 서울 오피스: 역삼역 · 제주 오피스: 첨단 산업 단지." data-en="About an hour, online (Google Meet/Zoom) or in person, with interviewers from the same or related roles. Seoul: Yeoksam Station · Jeju: Cheomdan Industrial Complex.">한 시간가량 온라인(Google Meet/Zoom) 또는 대면으로 진행하며, 면접관은 동일하거나 유관 직무의 동료입니다. 서울 오피스: 역삼역 · 제주 오피스: 첨단 산업 단지.</p>
-        </div>
-        <div class="step">
-          <div class="step-n">STEP 05</div>
-          <h3 data-ko="처우 협의 및 입사일 조정" data-en="Offer & start date">처우 협의 및 입사일 조정</h3>
-          <p data-ko="처우를 협의하고 입사일을 함께 조정합니다." data-en="We discuss compensation and arrange your start date together.">처우를 협의하고 입사일을 함께 조정합니다.</p>
-        </div>
-      </div>
-      <div class="apply-tips reveal">
-        <h4 data-ko="지원 전 참고" data-en="Before you apply">지원 전 참고</h4>
-        <ul>
-          <li data-ko="Notion·GitHub·Figma 웹 포트폴리오는 접근 권한을 꼭 확인해주세요." data-en="For Notion, GitHub, or Figma web portfolios, double-check access permissions.">Notion·GitHub·Figma 웹 포트폴리오는 접근 권한을 꼭 확인해주세요.</li>
-          <li data-ko="주민등록번호·급여·가족 등 민감한 개인정보는 제출하지 마세요." data-en="Do not submit sensitive personal info (resident registration number, salary, family).">주민등록번호·급여·가족 등 민감한 개인정보는 제출하지 마세요.</li>
-          <li data-ko="제주 오피스 포지션은 설문 작성이 필수입니다." data-en="Jeju office positions require a mandatory survey.">제주 오피스 포지션은 설문 작성이 필수입니다.</li>
-        </ul>
+        </a>
       </div>
     </div>
   </section>
@@ -572,7 +524,7 @@ footer{border-top:1px solid var(--line);padding-block:clamp(50px,7vw,82px);backg
   <section class="section" id="coffee">
     <div class="wrap coffee-grid">
       <div class="coffee-copy reveal">
-        <span class="ey"><span class="n">09</span> <span data-ko="커피챗" data-en="Coffee chat">커피챗</span></span>
+        <span class="ey"><span class="n">08</span> <span data-ko="커피챗" data-en="Coffee chat">커피챗</span></span>
         <h2 data-ko="KCGS에서, 커피 한 잔." data-en="At KCGS, over coffee.">KCGS에서, 커피 한 잔.</h2>
         <p data-ko="2023년에 이어 2026년, 다시 KCGS로 갑니다. 여수 현장에서, 무엇을 연구하는지 들려주시면 그 분야를 직접 만드는 동료와 연결해 드립니다." data-en="After 2023, we're back at KCGS in 2026. On-site in Yeosu, tell us what you research and we'll match you with someone who builds in that area.">2023년에 이어 2026년, 다시 KCGS로 갑니다. 여수 현장에서, 무엇을 연구하는지 들려주시면 그 분야를 직접 만드는 동료와 연결해 드립니다.</p>
         <p data-ko="15~20분, 부담 없이. 이력서는 필요 없습니다 — 호기심만 가져오세요." data-en="15-20 minutes, no pressure. No résumé needed, just bring your curiosity.">15~20분, 부담 없이. 이력서는 필요 없습니다 — 호기심만 가져오세요.</p>
